@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Paper & Ink Palette */
+    --background: 45 30% 96%;
+    /* #FDFCF8 Creamy paper */
+    --foreground: 220 20% 12%;
+    /* Dark ink */
+
+    --card: 45 30% 98%;
+    --card-foreground: 220 20% 12%;
+
+    --popover: 45 30% 98%;
+    --popover-foreground: 220 20% 12%;
+
+    --primary: 210 80% 30%;
+    /* Royal Blue Ink */
+    --primary-foreground: 45 30% 98%;
+
+    --secondary: 220 20% 12%;
+    /* Black Ink */
+    --secondary-foreground: 45 30% 98%;
+
+    --muted: 45 20% 90%;
+    --muted-foreground: 220 20% 40%;
+
+    --accent: 0 75% 45%;
+    /* Correction Red Ink */
+    --accent-foreground: 45 30% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 12%;
+    /* Solid black borders for Neo-brutalism */
+    --input: 220 20% 12%;
+    --ring: 210 80% 30%;
+
+    --radius: 0rem;
+    /* Flat edges for Neo-brutalism */
+
+    /* Player Specific Colors */
+    --player-1: 0 75% 55%;
+    --player-2: 210 80% 40%;
+    --player-3: 142 60% 35%;
+  }
+
+  * {
+    @apply border-border;
+    outline-color: hsl(var(--primary));
+  }
+
+  body {
+    background-color: #FDFCF8;
+    color: hsl(var(--foreground));
+    font-family: 'Outfit', sans-serif;
+    @apply antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+  }
+}
+
+@layer utilities {
+  .font-body {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .font-display {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+  }
+
+  .animate-draw {
+    animation: draw 0.5s ease-out forwards;
+  }
+}
+
+/* Custom Neo-brutalist Shadows */
+.brutal-shadow {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-shadow-primary {
+  box-shadow: 4px 4px 0px 0px hsl(var(--primary));
+}
+
+/* Animation for the strike lines */
+@keyframes strike-draw {
+  from {
+    stroke-dashoffset: 100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Button active states */
+button:active {
+  transform: translateY(2px);
+}
