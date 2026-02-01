@@ -21,7 +21,10 @@
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "noFallthroughCasesInSwitch": true,
-        /* Paths */
+        /* Vite & Paths */
+        "types": [
+            "vite/client"
+        ],
         "baseUrl": ".",
         "paths": {
             "@/*": [
@@ -30,11 +33,7 @@
         }
     },
     "include": [
-        "src"
-    ],
-    "references": [
-        {
-            "path": "./tsconfig.node.json"
-        }
+        "src",
+        "vite.config.ts"
     ]
 }
